@@ -10,7 +10,6 @@ const Header = () => {
     const [passedAboveTheFold, setPassedAboveTheFold] = useState(true)
 
     const checkScreen = debounce(() => {
-        console.log('Firing!')
         const screenHeight = window.innerHeight
             || document.documentElement.clientHeight
             || document.body.clientHeight

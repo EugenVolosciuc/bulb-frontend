@@ -1,26 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CustomAxios from 'config/axios'
 
-import BasePage from '../components/Layouts/BasePage.component'
-import Button from '../components/ui/Button.component'
-import Paragraph from '../components/ui/Paragraph.component'
-import bulb from '../static/images/bulb.svg'
-import design_examples from '../static/images/design_examples.svg'
-import collaborative from '../static/images/collaborative.svg'
+import BasePage from 'components/Layouts/BasePage.component'
+import Button from 'components/UI/Button.component'
+import Paragraph from 'components/UI/Paragraph.component'
+import bulb from 'static/images/bulb.svg'
+import design_examples from 'static/images/design_examples.svg'
+import collaborative from 'static/images/collaborative.svg'
+import Idea from 'components/Idea/Idea.component'
 
 const Homepage = () => {
+    const [idea, setIdea] = useState(null)
+    const [ideaIsLoading, setIdeaIsLoading] = useState(false)
+
+    const getRandomIdea = async () => {
+        setIdeaIsLoading(true)
+        try {
+            const response = await CustomAxios.get('/ideas/random')
+            setIdea(response.data)
+        } catch (error) {
+            console.log(error)
+        }
+        setIdeaIsLoading(false)
+    }
+
     return (
         <BasePage>
             <section className="w-full h-screen flex items-center justify-center blue-bg">
                 <div className="container">
-                    <div className="flex flex-col justify-center white-text items-center -mt-10">
-                        <img src={bulb} alt="Bulb" />
-                        <h2 className="text-6xl mt-5 text-center">Stuck in a rut?</h2>
-                        <h3 className="text-3xl mb-10 text-center">Get some design ideas</h3>
-                        <div className="flex flex-col md:flex-row">
-                            <Button className="mr-0 mb-6 md:mr-6 md:mb-0">Fast!</Button>
-                            <Button type="bordered">In details</Button>
-                        </div>
-                    </div>
+                    {
+                        ideaIsLoading
+                            ? <Paragraph className="text-white">Loading...</Paragraph>
+                            : idea
+                                ? <Idea idea={idea} getRandomIdea={getRandomIdea} />
+                                : <div className="flex flex-col justify-center white-text items-center -mt-10">
+                                <img src={bulb} alt="Bulb" />
+                                <h2 className="text-6xl mt-5 text-center">Stuck in a rut?</h2>
+                                <h3 className="text-3xl mb-10 text-center">Get some design ideas</h3>
+                                <div className="flex flex-col md:flex-row">
+                                    <Button onClick={getRandomIdea} className="mr-0 mb-6 md:mr-6 md:mb-0">Fast!</Button>
+                                    <Button type="bordered">In details</Button>
+                                </div>
+                            </div>
+                    }
                 </div>
             </section>
             <section className="w-full white-bg">

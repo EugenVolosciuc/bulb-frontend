@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Header from '../ui/Header.component'
-import Footer from '../ui/Footer.component'
+import Header from '../UI/Header.component'
+import Footer from '../UI/Footer.component'
 
 const BasePage = ({ children }) => {
     return (
