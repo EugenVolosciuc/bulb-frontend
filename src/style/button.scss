@@ -1,0 +1,53 @@
+@import 'variables';
+
+.btn {
+    width: 17rem;
+    height: 3.75rem;
+    padding: 10px 20px;
+    border-radius: 15px;
+
+    &.btn- {
+        &primary {
+            background-color: $yellow;
+            color: $darkblue;
+            border: 2px solid transparent;
+        }
+
+        &bordered {
+            background-color: $darkblue;
+            color: $white;
+            border: 2px solid $yellow;
+        }
+    }
+
+    &.btn-bg- {
+        &yellow {
+            background-color: $yellow;
+            color: $darkblue;
+        }
+
+        &blue {
+            background-color: $darkblue;
+            color: $white;
+        }
+
+        &transparent {
+            background-color: transparent;
+            color: $darkblue;
+        }
+    }
+
+    &.btn-border- {
+        &yellow {
+            border: 2px solid $yellow;
+        }
+
+        &blue {
+            border: 2px solid $darkblue;
+        }
+
+        &transparent {
+            border: 2px solid transparent;
+        }
+    }
+}

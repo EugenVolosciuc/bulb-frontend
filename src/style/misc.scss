@@ -1,0 +1,56 @@
+@import 'variables';
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 14px;
+
+    @media (min-width: 768px) {
+        font-size: 16px
+    }
+}
+
+// Hamburger menu overwrite
+.hamburger-box,
+.hamburger-inner, 
+.hamburger-inner::after, 
+.hamburger-inner::before {
+    width: 35px;
+}
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::after, .hamburger.is-active .hamburger-inner::before {
+    background-color: $white;
+}
+
+.hamburger:focus, 
+.hamburger-box, 
+.hamburger-inner, 
+.hamburger-inner::after, 
+.hamburger-inner::before,
+button:focus {
+    outline: none;
+}
+
+// Header height compensation
+.base-page > section:first-of-type {
+    margin-top: -85px;
+}
+
+.blue-bg {
+    background-color: $darkblue;
+}
+
+.white-bg {
+    background-color: $white;
+}
+
+.blue-text {
+    color: $darkblue;
+}
+
+.white-text {
+    color: $white;
+}
