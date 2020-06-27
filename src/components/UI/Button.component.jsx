@@ -18,7 +18,7 @@ import React from 'react'
 const Button = ({ type = 'primary', bgColor, borderColor, className, children, ...otherProps }) => {
     return (
         <button
-            className={`btn btn-${type} ${bgColor && `btn-bg-${bgColor}`} ${borderColor && `btn-border-${borderColor}`} text-2xl ${className}`}
+            className={`btn btn-${type} ${bgColor && `btn-bg-${bgColor}`} ${borderColor && `btn-border-${borderColor}`} text-xl ${className}`}
             {...otherProps}
         >
             {children}

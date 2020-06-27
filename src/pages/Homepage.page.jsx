@@ -46,10 +46,10 @@ const Homepage = () => {
                 </div>
             </section>
             <section className="w-full white-bg">
-                <div className="container grid grid-cols-2 col-gap-8 pt-40">
-                    <div className="flex flex-col justify-center">
-                        <h3 className="text-3xl text-left">Get some design ideas</h3>
-                        <Paragraph className=" mt-3 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos architecto nostrum voluptatem similique ea!</Paragraph>
+                <div className="container flex flex-col-reverse md:grid md:grid-cols-2 md:col-gap-8 pt-32 md:pt-40">
+                    <div className="flex flex-col justify-center items-center md:items-start">
+                        <h3 className="text-3xl text-center md:text-left py-5 md:py-0">Get some design ideas</h3>
+                        <Paragraph className="mt-3 mb-10 text-center md:text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos architecto nostrum voluptatem similique ea!</Paragraph>
                         <Button>Get Inspired</Button>
                     </div>
                     <div className="flex flex-col">
@@ -58,13 +58,13 @@ const Homepage = () => {
                 </div>
             </section>
             <section className="w-full white-bg">
-                <div className="container grid grid-cols-2 col-gap-8 py-40">
+                <div className="container flex flex-col md:grid md:grid-cols-2 md:col-gap-8 py-32 md:py-40">
                     <div className="flex flex-col">
                         <img src={collaborative} alt="Collaboration" />
                     </div>
-                    <div className="flex flex-col justify-center">
-                        <h3 className="text-3xl text-left">Get some help on your projects</h3>
-                        <Paragraph className=" mt-3 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos architecto nostrum voluptatem similique ea!</Paragraph>
+                    <div className="flex flex-col justify-center items-center md:items-start">
+                        <h3 className="text-3xl text-center md:text-left py-5 md:py-0">Get some help on your projects</h3>
+                        <Paragraph className="mt-3 mb-10 text-center md:text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos architecto nostrum voluptatem similique ea!</Paragraph>
                         <Button>Get Collaborative</Button>
                     </div>
                 </div>

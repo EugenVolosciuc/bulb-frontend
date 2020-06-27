@@ -10,10 +10,10 @@ const IdeaShowcase = ({ idea, getRandomIdea }) => {
     const indexOfCurrentExample = idea.examples.findIndex(example => example._id === currentIdeaExample._id)
 
     return (
-        <div className="grid grid-cols-2 col-gap-8">
-            <div className="flex flex-col justify-center">
-                <h3 className="text-3xl mb-5 text-left text-white">{idea.title}</h3>
-                <Paragraph className="mb-5 text-white">{idea.description}</Paragraph>
+        <div className="flex flex-col md:grid md:grid-cols-2 md:col-gap-8">
+            <div className="flex flex-col justify-center items-center md:items-start pb-10 md:pb-0">
+                <h3 className="text-3xl mb-5 text-center md:text-left text-white">{idea.title}</h3>
+                <Paragraph className="mb-5 text-white text-center md:text-left">{idea.description}</Paragraph>
                 <div className="flex flex-col md:flex-row">
                     <Button onClick={getRandomIdea} className="mr-0 mb-6 md:mr-6 md:mb-0">Search again</Button>
                     <Button type="bordered">In details</Button>
@@ -48,7 +48,7 @@ const IdeaShowcase = ({ idea, getRandomIdea }) => {
                                 </span>
                             </div>
                             <img
-                                className="max-w-full max-h-full"
+                                className="max-w-full max-h-full rounded-lg"
                                 src="https://cdn.dribbble.com/users/2742725/screenshots/12048036/media/2815ec7c4ed4cd4323de68a68c391426.png"
                                 alt="Temporary replacement" />
                         </>

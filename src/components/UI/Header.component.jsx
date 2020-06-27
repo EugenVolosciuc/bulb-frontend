@@ -7,7 +7,7 @@ import '../../style/hamburger.min.css'
 
 const Header = () => {
     const [hamIsActive, setHamIsActive] = useState(false)
-    const [passedAboveTheFold, setPassedAboveTheFold] = useState(true)
+    const [passedAboveTheFold, setPassedAboveTheFold] = useState(false)
 
     const checkScreen = debounce(() => {
         const screenHeight = window.innerHeight
