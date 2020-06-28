@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty'
 import Paragraph from 'components/UI/Paragraph.component'
 import Button from 'components/UI/Button.component'
 
-const IdeaShowcase = ({ idea, getRandomIdea }) => {
+const IdeaShowcase = ({ idea, getRandomIdea, setDetailedSearchMode }) => {
     const [currentIdeaExample, setCurrentIdeaExample] = useState(isEmpty(idea.examples) ? null : idea.examples[0])
 
     const indexOfCurrentExample = idea.examples.findIndex(example => example._id === currentIdeaExample._id)
@@ -16,7 +16,7 @@ const IdeaShowcase = ({ idea, getRandomIdea }) => {
                 <Paragraph className="mb-5 text-white text-center md:text-left">{idea.description}</Paragraph>
                 <div className="flex flex-col md:flex-row">
                     <Button onClick={getRandomIdea} className="mr-0 mb-6 md:mr-6 md:mb-0">Search again</Button>
-                    <Button type="bordered">In details</Button>
+                    <Button onClick={setDetailedSearchMode} type="bordered">In details</Button>
                 </div>
             </div>
             <div className="flex flex-col justify-center">
